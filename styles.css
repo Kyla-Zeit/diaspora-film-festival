@@ -1,0 +1,797 @@
+/* ===== Base ===== */
+* { margin:0; padding:0; box-sizing:border-box; }
+:root{
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+
+  --primary-black:#0a0a0a;
+  --primary-white:#ffffff;
+  --accent-gold:#d4af37;
+  --text-gray:#666;
+  --light-gray:#f8f8f8;
+  --border-gray:#e0e0e0;
+  --ease: cubic-bezier(.22,.61,.36,1);
+}
+html{ scroll-behavior:smooth; scrollbar-gutter: stable; }  /* keeps layout stable, no extra rim */
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  line-height:1.6; color:var(--primary-black); overflow-x:hidden;
+}
+
+/* Buttons */
+.cta-button{
+  display:inline-block; padding:1rem 2.5rem; background:var(--accent-gold); color:var(--primary-black);
+  text-decoration:none; font-weight:600; border:0; border-radius:0 !important;
+  transition:all .3s var(--ease); text-align:center; font-size:1rem; letter-spacing:.06em; font-variant:small-caps;
+}
+.cta-button:hover{ background:#b38e2d; color:#fff; transform:translateY(-2px); box-shadow:0 10px 30px rgba(212,175,55,.3); cursor:pointer; }
+
+/* Sections */
+.section{ padding:6rem 0; }
+.container{ max-width:1200px; margin:0 auto; padding:0 2rem; }
+.section-header{ text-align:center; margin-bottom:4rem; }
+.section-header h2{ font-size:clamp(2.5rem,5vw,4rem); font-weight:700; margin-bottom:1rem; letter-spacing:-.03em; }
+.section-header p{ font-size:1.2rem; color:var(--text-gray); max-width:600px; margin:0 auto; }
+
+/* About */
+.about{ background:var(--light-gray); }
+.about-content{ display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; }
+.about-text h3{ font-size:2rem; margin-bottom:1.5rem; font-weight:600; }
+.about-text p{ font-size:1.1rem; margin-bottom:1.5rem; color:var(--text-gray); }
+.about-stats{ display:grid; grid-template-columns:repeat(2,1fr); gap:2rem; margin-top:2rem; }
+.stat-item{ text-align:center; padding:2rem; background:var(--primary-white); border-radius:10px; transition:transform .3s var(--ease); }
+.stat-item:hover{ transform:translateY(-5px); }
+.stat-number{ font-size:2.5rem; font-weight:700; color:var(--accent-gold); display:block; }
+.stat-label{ color:var(--text-gray); margin-top:.5rem; }
+
+/* Featured Films */
+.featured-films{ background:#000; color:#fff; }
+.films-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(350px,1fr)); gap:2rem; margin-top:3rem; }
+.film-card{
+  background:#fff; border-radius:15px; overflow:hidden;
+  box-shadow:0 10px 40px rgba(0,0,0,.1); transition:transform .3s var(--ease), box-shadow .3s var(--ease);
+}
+.film-card:hover{ transform:translateY(-8px); box-shadow:0 24px 60px rgba(0,0,0,.18); }
+.film-image{ height:250px; background:linear-gradient(45deg,#f0f0f0,#e0e0e0); display:flex; align-items:center; justify-content:center; color:var(--text-gray); font-size:3rem; }
+.film-content{ padding:2rem; }
+.film-title{ font-size:1.5rem; font-weight:600; margin-bottom:1rem; }
+.film-description{ color:var(--text-gray); margin-bottom:1.5rem; line-height:1.6; }
+.film-awards{ font-size:.9rem; color:var(--accent-gold); font-weight:500; }
+
+/* Film video container */
+.film-video{ width:100%; aspect-ratio:16/9; background:#222; border-radius:12px 12px 0 0; overflow:hidden; display:flex; align-items:center; justify-content:center; margin-bottom:1.25rem; }
+.film-video iframe{ width:100%; height:100%; aspect-ratio:16/9; min-height:180px; background:#000; border:0; }
+
+/* ===== Schedule ===== */
+.schedule-black{ background:var(--primary-black); color:#fff; position:relative; }
+.schedule-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:2rem; margin-top:2rem; }
+.schedule-day h3{ font-size:1.5rem; color:var(--accent-gold); margin-bottom:1rem; }
+.schedule-day ul{ list-style:none; }
+.schedule-day li{ margin-bottom:.5rem; font-size:1rem; }
+.schedule-day .time{ font-weight:600; margin-right:.5rem; }
+.schedule-day .cta-button{ margin-top:1.2rem; display:inline-block; }
+
+/* Volunteer */
+.volunteer{ background:var(--primary-black); color:var(--primary-white); }
+.volunteer-content{ text-align:center; max-width:800px; margin:0 auto; }
+.volunteer h2{ color:#fff; margin-bottom:1.5rem; }
+.volunteer p{ font-size:1.2rem; margin-bottom:2rem; opacity:.9; }
+.volunteer-roles{ display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:2rem; margin:3rem 0; }
+.role-card{ background:rgba(255,255,255,.1); padding:2rem; border-radius:15px; backdrop-filter:blur(10px); transition:all .3s var(--ease); }
+.role-card:hover{ background:rgba(255,255,255,.15); transform:translateY(-5px); }
+.role-icon{ font-size:2.5rem; margin-bottom:1rem; }
+.role-title{ font-size:1.3rem; font-weight:600; margin-bottom:1rem; }
+
+/* Footer base */
+.footer{ background:var(--light-gray); padding:3rem 0 2rem; text-align:center; }
+.footer-content{ display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:2rem; margin-bottom:2rem; }
+.footer-section h3{ margin-bottom:1rem; font-weight:600; }
+.footer-section a{ color:var(--text-gray); text-decoration:none; display:block; margin-bottom:.5rem; transition:color .3s var(--ease); }
+.footer-section a:hover{ color:var(--accent-gold); }
+.social-links{ display:flex; justify-content:center; gap:1rem; margin-top:2rem; }
+.social-links a{
+  width:50px; height:50px; border-radius:50%; background:var(--primary-black); color:var(--primary-white);
+  display:flex; align-items:center; justify-content:center; text-decoration:none; transition:all .3s var(--ease);
+}
+.social-links a:hover{ background:var(--accent-gold); color:var(--primary-black); transform:translateY(-3px); }
+.footer-bottom{ padding-top:2rem; color:var(--text-gray); }
+
+/* Scroll-in utility */
+.fade-in{ opacity:0; transform:translateY(30px); transition:all .8s var(--ease); }
+.fade-in.visible{ opacity:1; transform:translateY(0); }
+
+/* ===== HERO + NAV ===== */
+.nav{
+  position:fixed; top:0; left:0; right:0; z-index:1000;
+  background: var(--accent-gold);
+  backdrop-filter: saturate(120%) blur(6px);
+  -webkit-backdrop-filter: saturate(120%) blur(6px); /* Safari */
+  border:0;
+  box-shadow: 0 4px 24px rgba(0,0,0,.22);
+  transition: background .25s var(--ease), box-shadow .25s var(--ease);
+}
+
+/* same look while scrolled (no change on threshold) */
+.nav.scrolled{
+  background: rgba(212, 175, 55, var(--nav-alpha));
+  box-shadow: 0 4px 24px rgba(0,0,0,.22);
+}
+.nav-inner{ max-width:1400px; margin:0 auto; padding:18px 28px; display:flex; align-items:center; justify-content:space-between; }
+.brand img{ height:46px; width:auto; display:block; }
+
+/* Burger */
+.menu-toggle{ --line:2px; width:40px; height:30px; position:relative; border:0; background:transparent; cursor:pointer;}
+.menu-toggle span{ position:absolute; left:6px; right:6px; height:var(--line); background:#fff; transition:transform .25s var(--ease), opacity .2s var(--ease), top .25s var(--ease), background .25s var(--ease); }
+.menu-toggle span:nth-child(1){ top:7px; } .menu-toggle span:nth-child(2){ top:14px; } .menu-toggle span:nth-child(3){ top:21px; }
+.menu-toggle.is-open span:nth-child(1){ top:14px; transform:rotate(45deg); }
+.menu-toggle.is-open span:nth-child(2){ opacity:0; }
+.menu-toggle.is-open span:nth-child(3){ top:14px; transform:rotate(-45deg); }
+.nav.scrolled .menu-toggle span{ background:#fff !important; mix-blend-mode:difference; }
+
+body.menu-open{ overflow:hidden; }
+
+
+.menu-toggle.is-open span{ background:#fff !important; }
+
+/* keep bars visible on dark overlay */
+.menu-toggle.is-open span{ background:#fff !important; }
+
+/* optional: hide the old overlay close button if you kept it */
+.menu-close{
+  position: fixed;
+  top: calc(var(--safe-top) + 12px);
+  right: calc(var(--safe-right) + 12px);
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: 2px solid rgba(255,255,255,.75);
+  background: rgba(0,0,0,.15);
+  color: #fff;
+  font-size: 28px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2400;
+}
+.menu-close:focus{ outline:2px solid #fff; outline-offset:2px; }
+.menu-close:hover{ background: rgba(0,0,0,.28); }
+  
+
+/* Keep the burger in place; just stack it above the overlay when open */
+.menu-open .nav{ z-index:1600; }
+.menu-open .menu-toggle span{ background:#fff; } /* make the X visible on dark bg */
+
+
+/* ===== Overlay menu — smoother, staggered ===== */
+.menu-overlay{
+  position:fixed; inset:0; z-index:1200; background:rgba(10,10,10,.96); color:#fff;
+  opacity:0; visibility:hidden; transform: translateY(6px) scale(.985);
+  transition:
+    opacity .32s var(--ease),
+    transform .32s var(--ease),
+    visibility 0s linear .32s;
+}
+.menu-overlay.is-open{
+  opacity:1; visibility:visible; transform: translateY(0) scale(1);
+  transition:
+    opacity .32s var(--ease),
+    transform .32s var(--ease),
+    visibility 0s;
+}
+.menu-panel{ position:relative; width:min(1200px,92vw); margin:0 auto; padding:clamp(28px,5vw,56px) 10px; }
+.menu-panel{ padding-top: calc(clamp(28px,5vw,56px) + var(--safe-top)); }
+
+
+/* (kept for reference but moot because .menu-close is display:none) */
+.menu-close{ position:absolute; top:clamp(18px,2vw,28px); right:6px; font-size:clamp(26px,3vw,34px); background:transparent; border:0; color:#fff; cursor:pointer; opacity:.85; }
+.menu-close:hover{ opacity:1; }
+
+.menu-list{ list-style:none; margin:clamp(24px,4vw,40px) 0 0; display:grid; gap:clamp(12px,2.2vw,18px); }
+.menu-list > li{ opacity:0; transform: translateY(8px); transition: opacity .36s var(--ease), transform .36s var(--ease); transition-delay: calc(var(--i, 0) * 50ms); }
+.menu-overlay.is-open .menu-list > li{ opacity:1; transform:none; }
+.menu-list > li > a, .menu-sub summary{
+  color:#f5f5f5; text-decoration:none; font-weight:800; letter-spacing:.02em;
+  font-size:clamp(30px,4.8vw,48px); line-height:1.12; transition:color .2s var(--ease), transform .2s var(--ease);
+}
+.menu-list > li > a:hover, .menu-sub summary:hover{ color:var(--accent-gold); transform:translateX(2px); }
+
+/* Stagger index (enough for many links) */
+.menu-list > li:nth-child(1){ --i:0 } .menu-list > li:nth-child(2){ --i:1 }
+.menu-list > li:nth-child(3){ --i:2 } .menu-list > li:nth-child(4){ --i:3 }
+.menu-list > li:nth-child(5){ --i:4 } .menu-list > li:nth-child(6){ --i:5 }
+.menu-list > li:nth-child(7){ --i:6 } .menu-list > li:nth-child(8){ --i:7 }
+.menu-list > li:nth-child(9){ --i:8 } .menu-list > li:nth-child(10){ --i:9 }
+.menu-list > li:nth-child(11){ --i:10 } .menu-list > li:nth-child(12){ --i:11 }
+
+/* Collapsible years */
+.menu-sub details{ border-top:1px solid rgba(255,255,255,.08); padding-top:12px; }
+.menu-sub summary{ list-style:none; cursor:pointer; }
+.menu-sub summary::-webkit-details-marker{ display:none; }
+.menu-sub .years{ margin-top:10px; display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:8px 14px; }
+.menu-sub .years a{
+  color:#cfd3d7; text-decoration:none; font-weight:600; letter-spacing:.04em; text-transform:uppercase;
+  font-size:clamp(12px,1.3vw,14px); padding:4px 2px; border-bottom:1px dashed rgba(255,255,255,.18);
+}
+.menu-sub .years a:hover{ color:#fff; border-bottom-color:var(--accent-gold); }
+
+/* ===== Slider ===== */
+.hero-slider{ position:relative; padding:0; margin:0; min-height:100svh; }
+.slider{ position:relative; width:100%; height:100svh; overflow:hidden; border:0; }
+.slides{ position:relative; width:100%; height:100%; }
+.slide{ position:absolute; inset:0; opacity:0; transition:opacity .6s var(--ease); }
+.slide.is-active{ opacity:1; z-index:2; }
+.slide img{ width:100%; height:100%; object-fit:cover; filter:contrast(1.04) brightness(.78); }
+.slide::after{ content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,.68)); }
+.slide-content{ position:absolute; inset:0; display:grid; align-content:end; gap:16px; padding:clamp(24px,5vw,56px); max-width:1200px; margin:auto; z-index:3; }
+.slide-content.align-right{ justify-items:end; text-align:right; }
+.slide-content.align-center{ justify-items:center; text-align:center; }
+.hero-slider h1{ color:#fff; font-size:clamp(3rem,7vw,5.6rem); line-height:1.05; margin:0; text-shadow:0 2px 10px rgba(0,0,0,.35); }
+.hero-slider h2{ color:#fff; font-size:clamp(2.2rem,5.2vw,4rem); line-height:1.1; margin:0; text-shadow:0 2px 10px rgba(0,0,0,.35); }
+.subtitle{ color:#f1f1f1; max-width:800px; text-shadow:0 1px 8px rgba(0,0,0,.35); }
+.badge{ color:#fff; font-weight:700; letter-spacing:.14em; font-size:.85rem; opacity:.9; }
+
+/* Dots */
+.dots{ position:absolute; left:0; right:0; bottom:16px; display:flex; gap:8px; justify-content:center; z-index:4; }
+.dots button{ width:9px; height:9px; border-radius:999px; border:1px solid rgba(255,255,255,.7); background:transparent; }
+.dots button[aria-selected="true"]{ background:#fff; }
+
+/* ===== Submit Section Form ===== */
+#submit{ background:var(--light-gray); padding:6rem 0; }
+#submit .section-header h2{ font-size:clamp(2.5rem,5vw,4rem); font-weight:700; margin-bottom:1rem; letter-spacing:-.03em; color:var(--primary-black); }
+#submit .section-header p{ font-size:1.2rem; color:var(--text-gray); max-width:600px; margin:0 auto; }
+#submit form{ background:#fff; border-radius:10px; padding:2rem; box-shadow:0 10px 30px rgba(0,0,0,.05); max-width:800px; margin:3rem auto 0; }
+#submit .form-label{ font-weight:600; color:var(--primary-black); }
+#submit .form-control{ border:1px solid var(--border-gray); border-radius:8px; padding:.75rem 1rem; font-size:1rem; }
+#submit .form-control:focus{ border-color:var(--accent-gold); box-shadow:0 0 0 3px rgba(212,175,55,.25); outline:none; }
+
+.form-grid{ display:grid; gap:1.25rem; background:#fff; border:1px solid #ececec; border-radius:16px; padding:2rem; box-shadow:0 10px 30px rgba(0,0,0,.06); }
+.form-row{ display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; }
+.form-row .full{ grid-column:1 / -1; }
+.field label{ display:block; font-weight:600; margin-bottom:.5rem; color:var(--primary-black); letter-spacing:-.01em; }
+.field input, .field textarea{
+  width:100%; border:1px solid #e6e6e6; background:#fff; color:var(--primary-black); border-radius:12px; padding:.9rem 1rem;
+  font:inherit; outline:none; transition:border-color .2s, box-shadow .2s, transform .04s; box-shadow:0 1px 0 rgba(0,0,0,.02);
+}
+.field textarea{ resize:vertical; }
+.field input:focus, .field textarea:focus{ border-color:var(--accent-gold); box-shadow:0 0 0 .2rem rgba(212,175,55,.18); }
+.actions{ display:flex; flex-direction:column; align-items:center; gap:.75rem; margin-top:.5rem; }
+.form-note{ color:var(--text-gray); font-size:.95rem; }
+
+/* ===== Sponsors Banner ===== */
+.sponsors-black{ background:var(--primary-white); padding:60px 0; }
+.banner-frame .banner-overlay{
+  position:absolute; left:0; right:0; height:80px; pointer-events:none;
+  background:linear-gradient(90deg, rgba(0,0,0,.6) 0%, rgba(9,34,54,.65) 50%, rgba(0,0,0,.4) 100%);
+  filter:blur(8px); opacity:.6; transform:skewY(-3deg);
+}
+.banner-frame .banner-overlay.top{ top:-30px; }
+.banner-frame .banner-overlay.bottom{ bottom:-30px; transform:skewY(3deg); }
+.sponsor-marquee{
+  --chip-bg:#0b0b0d; --chip-bd:rgba(255,255,255,.09);
+  position:relative; overflow:hidden; border-radius:16px; border:1px solid rgba(255,255,255,.06);
+  background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01)); padding:16px 0;
+}
+.sponsor-marquee .track{ display:flex; gap:16px; width:max-content; animation:marquee 28s linear infinite; will-change:transform; padding:4px 8px; }
+.sponsor-marquee:hover .track{ animation-play-state:paused; }
+.chip{
+  display:inline-flex; align-items:center; padding:.9rem 1.25rem; border-radius:12px; background:var(--chip-bg); border:1px solid var(--chip-bd);
+  color:#e6e6ea; text-decoration:none; font-weight:600; letter-spacing:.01em;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.04), 0 6px 18px rgba(0,0,0,.35);
+  transition: transform .08s var(--ease), box-shadow .2s var(--ease), border-color .2s var(--ease);
+}
+.chip:hover{ transform:translateY(-1px); border-color:rgba(212,175,55,.6); box-shadow:inset 0 1px 0 rgba(255,255,255,.08), 0 10px 26px rgba(212,175,55,.18); color:#fff; }
+@keyframes marquee{ 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+
+/* ===== Responsive ===== */
+@media (max-width: 960px){
+  .about-content{ grid-template-columns:1fr; }
+}
+@media (max-width: 768px){
+  .menu-sub .years{ grid-template-columns:repeat(3,minmax(0,1fr)); }
+}
+
+/* === Auto-contrast burger/X === */
+.menu-toggle span{
+  /* base color for the blend math */
+  background:#fff !important;
+  /* invert against whatever is underneath (light -> dark, dark -> light) */
+  mix-blend-mode:difference;
+  /* tiny outline so it never visually “thins out” on busy images */
+  filter: drop-shadow(0 0 1px rgba(0,0,0,.55));
+}
+
+
+/* === Overlay menu: small-caps === */
+.menu-list > li > a,
+.menu-sub summary{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-variant-caps: small-caps;   /* modern */
+  font-variant: small-caps;         /* fallback */
+  text-transform: none;
+  
+  letter-spacing: .06em;
+  line-height: 1.08;
+}
+
+/* Year links inside "Past Festivals" */
+.menu-sub .years a{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-variant-caps: small-caps;
+  font-variant: small-caps;
+  text-transform: none;
+  font-weight: 600;
+  letter-spacing: .08em;
+}
+
+/* --- Logo blends into the hero image --- */
+.nav .brand { 
+  filter: drop-shadow(0 1px 8px rgba(0,0,0,.25)); /* shadow lives on the container */
+}
+.nav .brand img{
+  mix-blend-mode: multiply !important; /* white disappears, blacks ink onto photo */
+  opacity: .96;
+  filter: none !important;            /* avoid filter+blend conflict on the img */
+}
+
+/* When nav gets a solid bg (scrolled) or menu opens, reset for clarity */
+.nav.scrolled .brand img,
+.menu-open .brand img{
+  mix-blend-mode: normal !important;
+  opacity: 1;
+}
+
+
+/* === Logo: reliable blend-on-photo without changing the asset === */
+.nav .brand { position: relative; display:inline-block; z-index:2; }
+.nav .brand img{
+  display:block;
+  /* if the browser supports it, this helps the black ink “bite” a bit more */
+  mix-blend-mode:multiply;
+}
+
+/* Feathered backplate that darkens only under the logo (no hard box) */
+.nav .brand::before{
+  content:"";
+  position:absolute;
+  /* tweak these insets if you want a tighter/looser halo */
+  inset:-6px -10px -6px -10px;
+  pointer-events:none;
+  /* fallback: subtle translucent dark */
+  background: rgba(0,0,0,.18);
+  border-radius:12px;
+  /* soften the photo underneath just a hair */
+  backdrop-filter: blur(1px) brightness(.92);
+  -webkit-backdrop-filter: blur(1px) brightness(.92);
+  /* feather the edges so it feels blended, not boxed */
+  -webkit-mask-image: radial-gradient(120% 180% at 45% 55%, #000 60%, transparent 100%);
+          mask-image: radial-gradient(120% 180% at 45% 55%, #000 60%, transparent 100%);
+}
+
+/* When nav background goes solid (scrolled) or overlay menu opens, remove the backplate + blending for crispness */
+.nav.scrolled .brand::before,
+.menu-open .brand::before{ opacity:0; }
+.nav.scrolled .brand img,
+.menu-open .brand img{ mix-blend-mode:normal; }
+
+/* === Bigger, responsive logo size (with one knob) === */
+:root{
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+
+  /* tune this if you want more/less: min, fluid, max */
+  --logo-h: clamp(52px, 7.4vw, 80px); }
+
+.nav .brand { position: relative; display:inline-block; z-index:2; }
+.nav .brand img{
+  height: var(--logo-h) !important;  /* override the 46px */
+  width: auto;
+  display: block;
+  mix-blend-mode: multiply;           /* “ink” on photo */
+}
+
+/* === Softer logo, no dark rim === */
+:root{
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+
+  /* tweak these two knobs */
+  --logo-feather: 28px;   /* ↑ = softer fade at the edges */
+  --logo-matte:   0;    /* 0–.12: darkness of the grey back-plate */
+   /* tweak this alpha if you want more/less see-through */
+  --nav-alpha: .38;
+}
+
+.nav .brand{ position:relative; display:inline-block; z-index:2; filter:none; } /* kill old drop-shadow */
+
+/* Feather the image itself so anti-aliased edge pixels fade away */
+.nav .brand img{
+  height: var(--logo-h) !important;
+  width:auto; display:block;
+  mix-blend-mode:multiply;
+
+  /* soft rectangular-ish fade; increase --logo-feather for more */
+  -webkit-mask: radial-gradient(140% 180% at 50% 52%,
+                  #000 calc(100% - var(--logo-feather)),
+                  transparent 100%);
+          mask: radial-gradient(140% 180% at 50% 52%,
+                  #000 calc(100% - var(--logo-feather)),
+                  transparent 100%);
+}
+
+/* Lighter, softer back-plate (no hard edge) */
+.nav .brand::before{
+  content:"";
+  position:absolute;
+  inset: calc(var(--logo-h)*-.16) calc(var(--logo-h)*-.22);
+  pointer-events:none;
+  background: rgba(0,0,0,var(--logo-matte));
+  border-radius: calc(var(--logo-h)*.24);
+  backdrop-filter: blur(3px) brightness(.98);
+  -webkit-backdrop-filter: blur(3px) brightness(.98);
+
+  /* push the transparency band wider to avoid a visible ring */
+  -webkit-mask: radial-gradient(160% 200% at 50% 55%,
+                  #000 30%, rgba(0,0,0,.5) 60%, transparent 88%);
+          mask: radial-gradient(160% 200% at 50% 55%,
+                  #000 30%, rgba(0,0,0,.5) 60%, transparent 88%);
+}
+
+/* When bar turns solid (scroll / menu), go crisp */
+.menu-open .brand::before,
+.nav.scrolled .brand::before{ opacity:0; }
+.nav.scrolled .brand img,
+.menu-open .brand img{ mix-blend-mode:normal; -webkit-mask:none; mask:none; }
+
+/* Push overlay links down so they don't crowd the nav/logo */
+.menu-overlay .menu-panel{
+  /* tune the first number if you want more/less space */
+  padding-top: clamp(96px, 12vh, 160px);
+}
+
+/* (optional) a little extra spacing for smaller screens */
+@media (max-width: 768px){
+  .menu-overlay .menu-panel{ padding-top: clamp(72px, 10vh, 120px); }
+}
+
+
+/* === Grungy gold underline on nav/overlay links === */
+:root{
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+
+  /* color + sizing knobs */
+  --ink-gold: var(--accent-gold);
+  --underline-h: .26em;      /* stroke height (scales with font-size) */
+  --underline-gap: .18em;    /* distance below text */
+}
+
+/* Works for both the overlay menu and any future inline nav links */
+.menu-list > li > a,
+.navlinks a{
+  position: relative;
+  text-decoration: none;
+  overflow: visible;
+}
+
+/* the “swoosh” */
+.menu-list > li > a::after,
+.navlinks a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom: calc(-1 * var(--underline-gap));
+  width:100%;
+  height: var(--underline-h);
+  background: var(--ink-gold);
+  opacity:.96;
+  pointer-events:none;
+  transform-origin:left center;
+  transform: scaleX(0);
+  transition: transform .45s cubic-bezier(.22,.61,.36,1) .05s;
+
+}
+
+
+
+
+
+
+/* === Clean straight underline for nav + overlay links === */
+:root{
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+
+  --ink-gold: var(--accent-gold); /* color */
+  --underline-h: 2px;             /* thickness */
+  --underline-gap: .28em;         /* distance below text */
+}
+
+.menu-list > li > a,
+.navlinks a{
+  position: relative;
+  text-decoration: none;
+  overflow: visible;
+}
+
+/* straight line that grows from left to right */
+.menu-list > li > a::after,
+.navlinks a::after{
+  content:"";
+  position:absolute;
+  left:0; right:0;
+  bottom: calc(-1 * var(--underline-gap));
+  height: var(--underline-h);
+  background: var(--ink-gold);
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition: transform .28s var(--ease);
+  opacity:.95;
+}
+
+/* show on hover/focus/active/current */
+.menu-list > li > a:hover::after,
+.menu-list > li > a:focus-visible::after,
+.menu-list > li.is-active > a::after,
+.navlinks a:hover::after,
+.navlinks a:focus-visible::after,
+.navlinks a[aria-current="page"]::after{
+  transform: scaleX(1);
+}
+
+/* a touch thicker inside the fullscreen overlay */
+.menu-overlay .menu-list > li > a{
+  --underline-h: 3px;
+  --underline-gap: .30em;
+}
+
+/* motion-safe */
+@media (prefers-reduced-motion: reduce){
+  .menu-list > li > a::after,
+  .navlinks a::after{ transition: none; transform: scaleX(1); }
+}
+
+/* === Force burger icon to solid white (no blending) === */
+:root{
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+ --burger-color:#fff; }
+
+.menu-toggle span{
+  background: var(--burger-color) !important;
+  mix-blend-mode: normal !important;  /* kill the blue-ish difference blend */
+  filter: none !important;            /* no color shifts */
+  opacity: 1 !important;
+}
+
+/* Keep it white when open / scrolled / overlayed */
+.menu-toggle.is-open span,
+.nav.scrolled .menu-toggle span,
+.menu-open .menu-toggle span{
+  background: var(--burger-color) !important;
+  mix-blend-mode: normal !important;
+}
+
+/* Clean X: hide the middle bar when open */
+.menu-toggle.is-open span:nth-child(2){
+  opacity: 0 !important;
+}
+
+/* (optional) nicer ends + ensure no blending while open */
+.menu-toggle span{ border-radius: 2px; }
+.menu-toggle.is-open span:nth-child(1),
+.menu-toggle.is-open span:nth-child(3){
+  mix-blend-mode: normal !important;
+}
+
+
+
+/* === Tablet/iPad logo safety cap ===================================== */
+/* Kills mask/backplate + locks size to prevent the SVG from blowing up */
+@media (max-width: 1200px){
+  :root{
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+ --logo-h: 44px; }
+  .nav .brand img{
+    height: var(--logo-h) !important;
+    width: auto !important;
+    max-width: min(46vw, 260px) !important;
+    -webkit-mask: none !important; mask: none !important;
+    mix-blend-mode: normal !important; opacity: 1 !important;
+  }
+  .nav .brand::before{ content: none !important; }
+}
+@media (max-width: 640px){ :root{
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+ --logo-h: 40px; } }
+
+/*
+ * When the screen size drops below desktop widths or the viewport height is short,
+ * the fullscreen overlay menu can run out of vertical space, causing some items
+ * to be cut off. To maintain usability and ensure all navigation links remain
+ * visible, progressively reduce the menu link font size on medium and small
+ * viewports. The `clamp()` function provides a safe minimum, a fluid target
+ * based on viewport width, and a maximum so the text never becomes too small
+ * or too large. These rules target both width and height breakpoints to catch
+ * landscape tablets and small laptops.
+ */
+@media (max-width: 1200px), (max-height: 900px) {
+  .menu-list > li > a,
+  .menu-sub summary {
+    font-size: clamp(24px, 4vw, 36px);
+  }
+}
+
+@media (max-width: 960px), (max-height: 750px) {
+  .menu-list > li > a,
+  .menu-sub summary {
+    font-size: clamp(22px, 4vw, 32px);
+  }
+}
+
+@media (max-width: 768px), (max-height: 640px) {
+  .menu-list > li > a,
+  .menu-sub summary {
+    font-size: clamp(20px, 5vw, 28px);
+  }
+}
+
+
+
+/* --- FIX: Hero/slider not showing on iPad (robust viewport fallbacks) --- */
+
+/* Replace your current hero/slider height rules with this block */
+.hero-slider{
+  position: relative;
+  padding: 0; margin: 0;
+  background: #0b0b0b;           /* dark fallback while images load */
+}
+.slider{
+  position: relative;
+  width: 100%;
+  overflow: hidden; border: 0;
+
+  /* fallbacks → last supported wins */
+  min-height: 100vh;              /* universal fallback */
+  height: 100vh;                  /* classic */
+  height: 100dvh;                 /* modern browsers */
+  height: 100svh;                 /* iOS 16+ “small” vh */
+}
+.slides{ position: relative; width: 100%; height: 100%; min-height: inherit; }
+.slide { position: absolute; inset: 0; opacity: 0; transition: opacity .6s var(--ease); }
+.slide.is-active { opacity: 1; z-index: 2; }
+.slide img{
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; object-fit: cover;
+  filter: contrast(1.04) brightness(.78);
+}
+
+/* iPad/WebKit quirk: make sure we can always fill the viewport */
+@supports (-webkit-touch-callout: none) {
+  html, body { height: 100%; }
+  .slider{ height: -webkit-fill-available; min-height: 100vh; }
+}
+
+/* Make sure a closed overlay never blocks clicks/looks like a blank pane */
+.menu-overlay{ pointer-events: none; }
+.menu-overlay.is-open{ pointer-events: auto; }
+
+
+
+/* === Phone landscape: always show/reach all links ====================== */
+
+/* Let the overlay scroll if content is taller than the viewport */
+.menu-overlay{
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  max-height: 100svh; /* iOS-friendly; falls back to vh elsewhere */
+}
+
+/* Keep a little safe-area guard */
+.menu-overlay .menu-panel{
+  padding-top: max(56px, env(safe-area-inset-top, 0px));
+  padding-bottom: max(16px, env(safe-area-inset-bottom, 0px));
+}
+
+/* Tighten spacing a bit by default so we get more lines per screen */
+.menu-list{
+  gap: clamp(8px, 1.6vw, 14px);
+}
+
+/* Short, landscape viewports: compress padding/gaps and scale text down */
+@media (orientation: landscape) and (max-height: 520px){
+  .menu-overlay .menu-panel{
+    padding-top: max(18px, env(safe-area-inset-top, 0px)) !important;
+    padding-bottom: max(10px, env(safe-area-inset-bottom, 0px)) !important;
+  }
+  .menu-list{
+    margin-top: 6px !important;
+    gap: 6px !important;
+  }
+  .menu-list > li > a,
+  .menu-sub summary{
+    /* smaller cap + very tight line-height to fit more rows */
+    font-size: clamp(16px, 3.6vw, 22px) !important;
+    line-height: 1.04 !important;
+  }
+  /* Year grid: fewer columns so each line is shorter/taller */
+  .menu-sub .years{
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 6px 10px;
+  }
+}
+
+/* Ultra-short landscapes: one more nudge */
+@media (orientation: landscape) and (max-height: 440px){
+  .menu-overlay .menu-panel{
+    padding-top: max(12px, env(safe-area-inset-top, 0px)) !important;
+    padding-bottom: max(8px, env(safe-area-inset-bottom, 0px)) !important;
+  }
+  .menu-list{
+    gap: 4px !important;
+  }
+  .menu-list > li > a,
+  .menu-sub summary{
+    font-size: clamp(14px, 3.3vw, 18px) !important;
+    line-height: 1.03 !important;
+  }
+}
+
+
+/* 1) Put the overlay ABOVE the gold nav bar when open */
+.menu-overlay{ z-index: 2200; }        /* higher than anything else */
+.menu-open .nav{ z-index: 900 !important; }  /* below the overlay */
+
+/* 2) Make overlay scroll if content is taller than the screen */
+.menu-overlay{
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  max-height: 100svh;
+}
+
+/* 3) Phone LANDSCAPE: compress spacing + text so all links fit */
+@media (orientation: landscape) and (max-height: 520px){
+  .menu-overlay .menu-panel{
+    padding-top: 16px !important;
+    padding-bottom: 12px !important;
+  }
+  .menu-list{ margin-top: 4px !important; gap: 6px !important; }
+  .menu-list > li > a,
+  .menu-sub summary{
+    font-size: clamp(16px, 3.2vw, 20px) !important;
+    line-height: 1.04 !important;
+  }
+  .menu-sub .years{ grid-template-columns: repeat(4,1fr); gap: 6px 10px; }
+}
+
+/* Ultra-short landscape screens */
+@media (orientation: landscape) and (max-height: 440px){
+  .menu-overlay .menu-panel{
+    padding-top: 12px !important; padding-bottom: 8px !important;
+  }
+  .menu-list{ gap: 4px !important; }
+  .menu-list > li > a,
+  .menu-sub summary{
+    font-size: clamp(14px, 3vw, 18px) !important;
+    line-height: 1.03 !important;
+  }
+}
+
+
+@media (orientation: landscape) and (max-height: 520px){
+  .hero-slider{ min-height: 55svh; }
+  .slider{ height: 55svh; min-height: 55svh; }
+  .slide-content{ gap: 10px; padding: clamp(12px, 4vw, 24px); }
+  .hero-slider h1{ font-size: clamp(1.6rem, 6vw, 2.2rem); }
+  .hero-slider h2{ font-size: clamp(1.2rem, 4.8vw, 1.8rem); }
+}
