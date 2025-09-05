@@ -33,5 +33,5 @@ diaspora-film-festival/
 ---
 
 ## 🌐 Deployment
-Deployed using **GitHub Pages**.
+Deployed using **GitHub Pages**.  
 Access it here → https://kyla-zeit.github.io/diaspora-film-festival/
