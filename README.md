@@ -8,10 +8,11 @@ Designed to highlight festival information with a clean UI, responsive layouts, 
 ---
 
 ## 🚀 Features
-•	Fully responsive design (desktop, tablet, mobile)
-•	Smooth scrolling and interactive navigation
-•	Organized and maintainable codebase (HTML, CSS, JS separated)
-•	Ready-to-deploy with GitHub Pages
+- Fully responsive across desktop, tablet, and mobile  
+- Smooth navigation and transitions  
+- Clear, modern layout emphasizing content and imagery  
+- Organized project structure (HTML, CSS, JS separated)  
+- Ready-to-deploy with GitHub Pages  
 
 ---
 ## 📂 Project Structure
