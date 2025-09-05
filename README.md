@@ -24,9 +24,9 @@ diaspora-film-festival/
 ---
 
 ## 🛠️ Tech Stack
-•	**HTML5** – Structure
-•	**CSS3** – Styling and layout
-•	**JavaScript (ES6)** – Interactivity
+- **HTML5** – Structure  
+- **CSS3** – Styling and layout  
+- **JavaScript (ES6)** – Interactivity  
 
 ---
 
