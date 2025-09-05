@@ -15,8 +15,9 @@ Designed to highlight festival information with a clean UI, responsive layouts, 
 - Ready-to-deploy with GitHub Pages  
 
 ---
+
 ## 📂 Project Structure
-diaspora-film-festival/
+diaspora-film-festival/  
 │── assets/        # Images, icons, media files  
 │── index.html     # Main page  
 │── styles.css     # Stylesheet  
