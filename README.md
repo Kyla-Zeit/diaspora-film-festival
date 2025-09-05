@@ -3,7 +3,7 @@
 A modern film festival website concept built with **HTML, CSS, and JavaScript**.
 Designed to highlight festival information with a clean UI, responsive layouts, and smooth navigation.
 
-👉 **[View Live Site] (https://kyla-zeit.github.io/diaspora-film-festival)
+👉 **[View Live Site](https://kyla-zeit.github.io/diaspora-film-festival)**
 ---
 
 ## 🚀 Features
