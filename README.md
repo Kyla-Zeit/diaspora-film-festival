@@ -16,10 +16,10 @@ Designed to highlight festival information with a clean UI, responsive layouts, 
 ---
 ## 📂 Project Structure
 diaspora-film-festival/
-│── assets/ # Images, icons, media files
-│── index.html # Main page
-│── styles.css # Stylesheet
-│── script.js # JavaScript functionality
+│── assets/        # Images, icons, media files  
+│── index.html     # Main page  
+│── styles.css     # Stylesheet  
+│── script.js      # JavaScript functionality  
 
 ---
 
