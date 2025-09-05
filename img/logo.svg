@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 260" role="img" aria-label="Diaspora Film Festival - spray and drips">
+  <defs>
+    <style>
+      .sys{ font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif }
+      .top{ font:900 112px/1 var(--f,system-ui); letter-spacing:3px }
+      .sub{ font:800 34px/1 var(--f,system-ui); letter-spacing:9px }
+    </style>
+    <filter id="spray" x="-25%" y="-50%" width="150%" height="200%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="1" seed="4" result="t"></feTurbulence>
+      <feColorMatrix in="t" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 28 -13"></feColorMatrix>
+      <feGaussianBlur stdDeviation="0.5"></feGaussianBlur>
+    </filter>
+  </defs>
+  <g fill="#0a0a0a">
+    <text x="600" y="118" text-anchor="middle" class="sys top">DIASPORA</text>
+    <text x="600" y="176" text-anchor="middle" class="sys sub">FILM FESTIVAL</text>
+    <!-- a few subtle drips/splatters (still transparent background) -->
+    <g opacity=".55">
+      <ellipse cx="330" cy="188" rx="4" ry="18"></ellipse>
+      <ellipse cx="865" cy="190" rx="3" ry="14"></ellipse>
+      <circle cx="295" cy="170" r="2"></circle>
+      <circle cx="910" cy="166" r="2.4"></circle>
+      <circle cx="1040" cy="150" r="1.8"></circle>
+    </g>
+  </g>
+  <!-- faint aerosol around text -->
+  <g filter="url(#spray)" opacity=".22">
+    <text x="600" y="118" text-anchor="middle" class="sys top">DIASPORA</text>
+    <text x="600" y="176" text-anchor="middle" class="sys sub">FILM FESTIVAL</text>
+  </g>
+</svg>

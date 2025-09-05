@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="700" viewBox="0 0 2000 700">
+  <title>Diaspora Film Festival — Left Lockup (grunge)</title>
+  <desc>Transparent text-only logo with gritty edges. Fonts: system UI / Arial Black / Impact fallback.</desc>
+  
+<defs>
+  <!-- Edge-roughening / stamped-ink look -->
+  <filter id="grit" x="-20%" y="-20%" width="140%" height="140%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="1" seed="7" result="noise"/>
+    <feGaussianBlur in="noise" stdDeviation="0.6" result="blurredNoise"/>
+    <!-- Slight edge wobble -->
+    <feDisplacementMap in="SourceGraphic" in2="blurredNoise" scale="1.4" xChannelSelector="R" yChannelSelector="G" result="disp"/>
+    <!-- Tiny erosion to chip edges -->
+    <feMorphology in="disp" operator="erode" radius="0.2" result="eroded"/>
+    <feComposite in="eroded" in2="blurredNoise" operator="arithmetic" k1="0.8" k2="0.2" k3="0" k4="0" result="comp"/>
+  </filter>
+
+  <!-- Sprinkles of missing ink -->
+  <filter id="speckle" x="-10%" y="-10%" width="120%" height="120%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="2" seed="21" result="noise2"/>
+    <feColorMatrix in="noise2" type="matrix" values="
+      1 0 0 0 0
+      0 1 0 0 0
+      0 0 1 0 0
+      0 0 0 2.2 -1.2" result="alphaNoise"/>
+    <feComposite in="SourceGraphic" in2="alphaNoise" operator="out" result="stamped"/>
+  </filter>
+</defs>
+
+
+  <g font-family="-apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Arial Black', Impact, sans-serif"
+     fill="#121212">
+    <!-- Big line -->
+    <text x="80" y="330" filter="url(#grit)" 
+          font-size="320" font-weight="900" letter-spacing="-0.01em"
+          text-anchor="start">DIASPORA</text>
+
+    <!-- Separator rule (adds structure like a brand line) -->
+    <g opacity="0.95" filter="url(#grit)">
+      <rect x="80" y="400" width="1840" height="9" fill="#121212" />
+    </g>
+
+    <!-- Small line -->
+    <text x="80" y="520" filter="url(#grit) url(#speckle)"
+          font-size="160" font-weight="800" letter-spacing="0.08em"
+          text-anchor="start">FILM FESTIVAL</text>
+  </g>
+</svg>

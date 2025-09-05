@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Diaspora Film Festival</title>
+<link rel="stylesheet" href="styles.css?v=nav-mobile-x-13">
+
+</head>
+<body>
+<a id="home"></a>
+
+<!-- =================== NAV =================== -->
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#home" aria-label="Diaspora Film Festival — Home">
+      <img src="img/logo10.svg" alt="Diaspora Film Festival Logo" />
+    </a>
+    <button class="menu-toggle" id="menu-toggle"  type="button"
+            aria-controls="menu-overlay"
+            aria-expanded="false"
+            aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="menu-overlay" id="menu-overlay" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="menu-panel">
+    <button class="menu-close" id="menu-close" aria-label="Close menu">×</button>
+    <ul class="menu-list" role="menu">
+      <li role="none"><a role="menuitem" href="#about">About</a></li>
+      <li role="none"><a role="menuitem" href="#films">Featured Films</a></li>
+      <li role="none"><a role="menuitem" href="#schedule">Schedule</a></li>
+      <li role="none"><a role="menuitem" href="#submit">Submit a Film</a></li>
+
+      <li class="menu-sub" role="none">
+        <details>
+          <summary>Past Festivals</summary>
+          <div class="years">
+            <a href="#2011festival">2011</a><a href="#2012festival">2012</a>
+            <a href="#2013festival">2013</a><a href="#2014festival">2014</a>
+            <a href="#2015festival">2015</a><a href="#2016festival">2016</a>
+            <a href="#2017festival">2017</a><a href="#2018festival">2018</a>
+            <a href="#2019festival">2019</a><a href="#2020festival">2020</a>
+            <a href="#2021festival">2021</a><a href="#2022festival">2022</a>
+            <a href="#2023festival">2023</a>
+          </div>
+        </details>
+      </li>
+
+      <li role="none"><a role="menuitem" href="#volunteer">Volunteer</a></li>
+      <li role="none"><a role="menuitem" href="#sponsors">Sponsors &amp; Partners</a></li>
+      <li role="none"><a role="menuitem" href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</div>
+
+
+<!-- =================== HERO (full-viewport image/slider) =================== -->
+<section aria-label="Featured films slider" class="hero hero-slider">
+  <div class="slider" data-autoplay="6000" tabindex="0">
+    <div class="slides">
+      <article aria-label="1 of 4" aria-roledescription="slide" class="slide is-active">
+        <img alt="Cinema audience" src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?q=80&w=2400&auto=format&fit=crop" />
+        <div class="slide-content">
+          <span class="badge">Toronto • Est. 2000</span>
+          <h1>Stories of migration, identity,<br/>and belonging — on the big screen.</h1>
+          <p class="subtitle">Showcasing films by and about diasporic communities — centering voices often left out of mainstream media.</p>
+          <a class="cta-button" href="#films">Explore Films</a>
+        </div>
+      </article>
+
+      <article aria-label="2 of 4" aria-roledescription="slide" class="slide">
+        <img alt="Projector in theatre" src="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?q=80&w=2400&auto=format&fit=crop" />
+        <div class="slide-content align-center">
+          <span class="badge">2024 Festival</span>
+          <h2>In the Land of Brothers</h2>
+          <p class="subtitle">Toronto Premiere · 95 min · Farsi, Dari, Hazaragi (EN subs)</p>
+          <a class="cta-button" href="#schedule">See Schedule</a>
+        </div>
+      </article>
+
+      <article aria-label="3 of 4" aria-roledescription="slide" class="slide">
+        <img alt="Spotlight over audience" src="https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?q=80&w=2400&auto=format&fit=crop" />
+        <div class="slide-content align-right">
+          <span class="badge">Special Screening</span>
+          <h2>Persian Lessons</h2>
+          <p class="subtitle">Germany/Belarus · 127 min · English subtitles</p>
+          <a class="cta-button" href="#films">Full Program</a>
+        </div>
+      </article>
+
+      <article aria-label="4 of 4" aria-roledescription="slide" class="slide">
+        <img alt="Theatre seating" src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?q=80&w=2400&auto=format&fit=crop" />
+        <div class="slide-content">
+          <span class="badge">Submissions</span>
+          <h2>Submit your film (Feb–Jun)</h2>
+          <a class="cta-button" href="#submit">How to Submit</a>
+        </div>
+      </article>
+    </div>
+    <div class="dots" aria-label="Slider Pagination" role="tablist"></div>
+  </div>
+</section>
+
+<!-- =================== ABOUT =================== -->
+<section class="section about" id="about">
+  <div class="container">
+    <div class="section-header fade-in">
+      <h2>About Our Festival</h2>
+      <p>Bringing attention to the experiences of diasporic communities through the transformative power of cinema</p>
+    </div>
+
+    <div class="about-content">
+      <div class="about-text fade-in">
+        <h3>Our Mission</h3>
+        <p>The Diaspora Film Festival showcases stories that reflect the complexities of identity, migration, and belonging. We spotlight voices too often left out of mainstream media, creating a platform for authentic storytelling that resonates across cultures and communities.</p>
+        <p>Founded in Toronto, our festival has become a vital space for filmmakers and audiences to connect through shared experiences of movement, memory, and hope.</p>
+      </div>
+
+      <div class="about-stats fade-in">
+        <div class="stat-item"><span class="stat-number">50+</span><div class="stat-label">Featured Films</div></div>
+        <div class="stat-item"><span class="stat-number">25</span><div class="stat-label">Countries</div></div>
+        <div class="stat-item"><span class="stat-number">5000+</span><div class="stat-label">Attendees</div></div>
+        <div class="stat-item"><span class="stat-number">4</span><div class="stat-label">Festival Days</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== FEATURED FILMS =================== -->
+<section class="section featured-films" id="films">
+  <div class="container">
+    <div class="section-header fade-in">
+      <h2>Featured Films</h2>
+      <p>Discover powerful stories from filmmakers around the world</p>
+    </div>
+
+    <div class="films-grid">
+      <div class="film-card fade-in">
+        <div class="film-video">
+          <iframe src="https://www.youtube.com/embed/ysz5S6PUM-U" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <div class="film-card fade-in">
+        <div class="film-video">
+          <iframe src="https://www.youtube.com/embed/ysz5S6PUM-U" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SCHEDULE =================== -->
+<section class="section schedule" id="schedule">
+  <div class="container">
+    <div class="section-header">
+      <h2>Schedule</h2>
+      <p>Discover the lineup of films and events for each day of the festival.</p>
+    </div>
+
+    <div class="schedule-grid">
+      <div class="schedule-day">
+        <h3>Thursday, October 10</h3>
+        <ul>
+          <li><span class="time">5:00 PM</span> Opening Ceremony - TIFF Bell Lightbox</li>
+          <li><span class="time">7:00 PM</span> Feature Film Premiere - TIFF Bell Lightbox</li>
+        </ul>
+        <a class="cta-button" href="https://www.eventbrite.ca/" target="_blank" rel="noopener">Purchase Tickets</a>
+      </div>
+
+      <div class="schedule-day">
+        <h3>Friday, October 11</h3>
+        <ul>
+          <li><span class="time">3:00 PM</span> Short Film Showcase - Innis Town Hall</li>
+          <li><span class="time">6:00 PM</span> Panel Discussion: "Cinema &amp; Culture" - Innis Town Hall</li>
+        </ul>
+        <a class="cta-button" href="https://www.eventbrite.ca/" target="_blank" rel="noopener">Purchase Tickets</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SUBMIT A FILM =================== -->
+<section class="section" id="submit">
+  <div class="container">
+    <div class="section-header">
+      <h2>Submit&nbsp;A&nbsp;Film</h2>
+      <p>We welcome films that explore diaspora identities, migration journeys, and stories of belonging.</p>
+    </div>
+
+    <form action="#" class="form-grid" method="post" novalidate>
+      <div class="form-row">
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" name="name" placeholder="Your full name" required type="text" />
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" placeholder="you@example.com" required type="email" />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="field full">
+          <label for="film-title">Film Title</label>
+          <input id="film-title" name="film-title" placeholder="Enter film title" required type="text" />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="field full">
+          <label for="synopsis">Synopsis</label>
+          <textarea id="synopsis" name="synopsis" placeholder="100–300 words is perfect" required rows="6"></textarea>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="field">
+          <label for="link">Screening Link</label>
+          <input id="link" name="link" placeholder="https://... (Vimeo, YouTube, etc.)" required type="url" />
+        </div>
+        <div class="field">
+          <label for="password">Link Password (if any)</label>
+          <input id="password" name="password" placeholder="Optional" type="text" />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="field full">
+          <label for="additional-info">Additional Information</label>
+          <textarea id="additional-info" name="additional-info" placeholder="Festivals, runtime, country, languages, premiere status, etc." rows="4"></textarea>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="cta-button" type="submit">Submit</button>
+        <p class="form-note">By submitting, you confirm you have rights to share this film for festival consideration.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- =================== VOLUNTEER =================== -->
+<section class="section volunteer" id="volunteer">
+  <div class="container">
+    <div class="volunteer-content">
+      <div class="section-header fade-in">
+        <h2>Join Our Team</h2>
+        <p>Help us create an unforgettable festival experience while supporting meaningful storytelling</p>
+      </div>
+
+      <div class="volunteer-roles">
+        <div class="role-card fade-in">
+          <div class="role-icon">💻</div>
+          <h3 class="role-title">Web Design</h3>
+          <p>Help improve our website's design and user experience</p>
+        </div>
+        <div class="role-card fade-in">
+          <div class="role-icon">🎪</div>
+          <h3 class="role-title">Event Support</h3>
+          <p>Assist with festival logistics and attendee experience</p>
+        </div>
+        <div class="role-card fade-in">
+          <div class="role-icon">📢</div>
+          <h3 class="role-title">Marketing</h3>
+          <p>Help spread the word about our films and events</p>
+        </div>
+        <div class="role-card fade-in">
+          <div class="role-icon">🎬</div>
+          <h3 class="role-title">Film Programming</h3>
+          <p>Support film selection and screening coordination</p>
+        </div>
+      </div>
+
+      <a class="cta-button" href="#contact">Get Involved</a>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SPONSORS =================== -->
+<section class="sponsors-section section sponsors-black" id="sponsors">
+  <div class="banner-frame">
+    <div class="container">
+      <div class="section-header">
+        <h2>Sponsors&nbsp;&amp;&nbsp;Partners</h2>
+        <p>With gratitude to the organizations who support our festival.</p>
+      </div>
+
+      <div class="sponsor-marquee" role="list">
+        <div class="track" aria-hidden="false">
+          <a class="chip" href="https://diasporafilmfest.com/sponsors-and-partnerships/" target="_blank" rel="noopener" role="listitem">Ontario Arts Council</a>
+          <a class="chip" aria-disabled="true" href="#" role="listitem">Canada Council for the Arts</a>
+          <a class="chip" aria-disabled="true" href="#" role="listitem">Toronto Arts Council</a>
+          <a class="chip" aria-disabled="true" href="#" role="listitem">Hot Docs</a>
+          <a class="chip" aria-disabled="true" href="#" role="listitem">TIFF</a>
+          <a class="chip" aria-disabled="true" href="#" role="listitem">Consulate Partners</a>
+          <a class="chip" aria-disabled="true" href="#" role="listitem">Community Partners</a>
+          <!-- duplicate for seamless loop -->
+          <a class="chip" href="https://diasporafilmfest.com/sponsors-and-partnerships/" target="_blank" rel="noopener" role="listitem">Ontario Arts Council</a>
+          <a class="chip" aria-disabled="true" href="#" role="listitem">Canada Council for the Arts</a>
+          <a class="chip" aria-disabled="true" href="#" role="listitem">Toronto Arts Council</a>
+          <a class="chip" aria-disabled="true" href="#" role="listitem">Hot Docs</a>
+          <a class="chip" aria-disabled="true" href="#" role="listitem">TIFF</a>
+          <a class="chip" aria-disabled="true" href="#" role="listitem">Consulate Partners</a>
+          <a class="chip" aria-disabled="true" href="#" role="listitem">Community Partners</a>
+        </div>
+      </div>
+    </div>
+    <div class="banner-overlay top"></div>
+    <div class="banner-overlay bottom"></div>
+  </div>
+</section>
+
+<!-- =================== FOOTER =================== -->
+<footer class="footer footer-black" id="contact">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <a href="mailto:info@diasporafilmfest.com">info@diasporafilmfest.com</a>
+        <a href="tel:+14161234567">(416) 123-4567</a>
+        <p>Toronto, Ontario</p>
+      </div>
+      <div class="footer-section">
+        <h3>Festival</h3>
+        <a href="#films">Featured Films</a>
+        <a href="#schedule">Schedule</a>
+        <a href="https://www.eventbrite.ca/" target="_blank" rel="noopener">Tickets</a>
+      </div>
+      <div class="footer-section">
+        <h3>Get Involved</h3>
+        <a href="#submit">Submit a Film</a>
+        <a href="#volunteer">Volunteer</a>
+        <a href="#sponsors">Sponsors</a>
+      </div>
+    </div>
+
+    <div class="social-links">
+      <a aria-label="Instagram" href="#">📷</a>
+      <a aria-label="Facebook" href="#">📘</a>
+      <a aria-label="Twitter" href="#">🐦</a>
+      <a aria-label="YouTube" href="#">📺</a>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025. Diaspora Film Festival. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>
